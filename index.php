@@ -41,15 +41,22 @@
             <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <!--email form -->
+        <!--phone number form -->
         <div class = "form-group">
             <label for="phonenumber">Phone Number </label>
             <input type="text" class="form-control" id="phonenumber" aria-describedby="phoneHelp" name="phonenumber">
             <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+            
         </div>
+        <!--Upload file form -->
+        <div class = "custom-file">
+            <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+            <label class="custom-file-label" for="avaatar">Choose file </label>
+            <small id="avatar" class="form-text badge text-bg-info">Upload is optional</small>
+        </div>
+        <br/><br/>
 
         <button type="submit" name="submit" class="btn btn-primary">Register</button>
-
     </form>
 
 <br>

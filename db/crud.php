@@ -10,10 +10,10 @@
         }
          
        //function to insert a new record into the attendee datebase 
-        public function insertAttendees($fname, $lname, $dob, $email, $phonenumber, $specialty){
+        public function insertAttendees($fname, $lname, $dob, $email, $phonenumber, $specialty, $filedest){
                 try {
                     //define sql statement to be executed and given placeholders values 
-                    $sql = "INSERT INTO attendee(`firstname`, `lastname`, `dateofbirth`, `emailaddress`, `contactnumber`, `specialty_id`) VALUES (:fname, :lname, :dob, :email, :phonenumber, :specialty)";
+                    $sql = "INSERT INTO attendee(firstname, lastname, dateofbirth, emailaddress, contactnumber, specialty_id, filedest) VALUES (:fname, :lname, :dob, :email, :phonenumber, :specialty, :filedest)";
                     //prepare the sql statement for execution 
                     $stmt = $this->db->prepare($sql);
                     //binds all placeholders to the actual values 
@@ -23,6 +23,7 @@
                     $stmt->bindparam(':email',$email);
                     $stmt->bindparam(':contactnumber',$phonenumber);
                     $stmt->bindparam(':specialty',$specialty);
+                    $stmt->bindparam(':filedest',$filedest);
 
                     $stmt->execute();
                     return true;
@@ -79,6 +80,22 @@
                 return false;
             }
             
+        }
+        public function getSpecialtyById($id){
+            try{
+                $sql = "SELECT * FROM `specialties` where specialty_id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id', $id);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+            }catch (PDOException $e){
+                echo $e->getMessage();
+                return false; 
+            }
+
+
+
         }
 
         public function getAttendeeDetail($id){
