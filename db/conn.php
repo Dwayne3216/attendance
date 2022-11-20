@@ -5,6 +5,12 @@
     $pass = '';
     $charset = 'utf8mb4';
 
+$host = 'applied-web.mysql.database.azure.com';
+$db = 'attendee_dwayne_whitely';
+$user = 'appliedweb_user@applied-web';
+$pass = 'P@ssword1';
+$charset = 'utf8mb4';
+
     //dsn-data source name (how the database is connected)
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

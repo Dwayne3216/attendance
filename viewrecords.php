@@ -15,13 +15,13 @@
         <th>#</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Date of Birth</th>
+        <!-- <th>Date of Birth</th>
         <th>Email Address</th>
-        <th>Contact Number</th>
-        <th>Specialty</th>
+        <th>Contact Number</th>-->
+        <th>Specialty</th> 
         <th>Actions</th>
     </tr>
-    <?php while ($r = $results->fetch(PD0::FETCH_ASS0C)){ ?>
+    <?php while ($r = $results->fetch(PDO::FETCH_ASS0C)){ ?>
         <tr>
             <td><?php echo $r['attendee_id'] ?></td>
             <td><?php echo $r['firstname'] ?></td>

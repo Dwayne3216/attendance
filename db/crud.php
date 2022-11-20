@@ -13,7 +13,7 @@
         public function insertAttendees($fname, $lname, $dob, $email, $phonenumber, $specialty, $filedest){
                 try {
                     //define sql statement to be executed and given placeholders values 
-                    $sql = "INSERT INTO attendee(firstname, lastname, dateofbirth, emailaddress, contactnumber, specialty_id, filedest) VALUES (:fname, :lname, :dob, :email, :phonenumber, :specialty, :filedest)";
+                    $sql = "INSERT INTO attendee (firstname, lastname, dateofbirth, emailaddress, contactnumber, specialty_id, filedest) VALUES (:fname, :lname, :dob, :email, :phonenumber, :specialty, :filedest)";
                     //prepare the sql statement for execution 
                     $stmt = $this->db->prepare($sql);
                     //binds all placeholders to the actual values 
@@ -21,7 +21,8 @@
                     $stmt->bindparam(':lname',$lname);
                     $stmt->bindparam(':dob',$dob);
                     $stmt->bindparam(':email',$email);
-                    $stmt->bindparam(':contactnumber',$phonenumber);
+                    // $stmt->bindparam(':contactnumber',$phonenumber); THIS WAS THERE
+                    $stmt->bindparam(':phonenumber',$phonenumber); 
                     $stmt->bindparam(':specialty',$specialty);
                     $stmt->bindparam(':filedest',$filedest);
 
@@ -61,7 +62,7 @@
         // function to read records from attendees database
         public function getAttendees(){
             try{
-                $sql = "SELECT * FROM `attendee`a inner join specialties s on a.specialty_id = s.specialty_id";
+                $sql = "SELECT * FROM `attendee` a inner join specialties s on a.specialty_id = s.specialty_id";
                 $result = $this->db->query($sql);
                 return $result;
             }catch (PDOException $e) {

@@ -56,7 +56,7 @@
         </div>
         <br/><br/>
 
-        <button type="submit" name="submit" class="btn btn-primary">Register</button>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
 
 <br>
