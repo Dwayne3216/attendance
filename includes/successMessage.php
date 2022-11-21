@@ -1,3 +1,3 @@
 <div class="alert alert-success" role="alert">
-    Operation was successful
+Operation was Successful!
 </div>

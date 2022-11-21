@@ -1,3 +1,3 @@
-<div class="alert alert-success" role="alert">
-   Error!!! Operation was Unsuccessful
+<div class="alert alert-danger" role="alert">
+ Operation encountered an Error. Please try again
 </div>
