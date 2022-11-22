@@ -92,7 +92,8 @@ if (isset($_POST['submit'])) {
 //    echo $_GET['phone'];
 
 ?>
-<img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 50%; height: 50%"/>
+<img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 20%; height: 20%"/>
+
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">

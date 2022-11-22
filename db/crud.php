@@ -40,6 +40,8 @@ class crud
         }
     }
 
+    
+       
     //EDIT
     public function editAttendee($id, $firstname, $lastname, $dob, $email, $phone, $specialty)
     {

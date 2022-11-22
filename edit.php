@@ -1,6 +1,7 @@
 <?php
 
 $title = 'Edit Record';
+
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'db/conn.php';
@@ -11,16 +12,13 @@ $results = $crud->getSpecialties();
 //EDIT
 if (!isset($_GET['id'])) {
    // echo 'error';
-   include 'includes/errormessage.php'; //generic Error Message
+   include 'includes/errormessage.php'; 
    header("Location: viewrecords.php ");
 } else {
     $id = $_GET['id'];
     $attendee = $crud->getAttendeeDetails($id);
 
 ?>
-
-
-
     <h1 class="text-center">Edit Record</h1>
 
 
@@ -50,12 +48,12 @@ if (!isset($_GET['id'])) {
         <div class="mb-3">
             <label for="specialty" class="form-label">Specialty</label>
 
-            <select class="form-select" aria-label="specialty" value="<?php echo $attendee['specialty'] ?>" id="specialty" name="specialty">
+            <select class="form-select" aria-label="specialty" value="<?php echo $attendee['specialty_id'] ?>" id="specialty" name="specialty">
 
 
                 <?php while ($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
 
-                    <option value=" <?php echo $r['specialty_id']; ?>" <?php if ($r['specialty_id'] == $attendee['specialty_id']) echo 'selected' ?>>
+                    <option value="<?php echo $r['specialty_id']; ?>" <?php if ($r['specialty_id'] == $attendee['specialty_id']) echo 'selected' ?>>
                         <?php echo $r['name']; ?>
                     </option>
 

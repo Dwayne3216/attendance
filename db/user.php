@@ -64,7 +64,7 @@
                     //ensure you dont enter two users with the same username
          public function getUserbyUsername($username){
             try {
-                $sql = "select count(*) as num users WHERE username = :username";
+                $sql = "select count(*) as num from users WHERE username = :username";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':username', $username);
             
